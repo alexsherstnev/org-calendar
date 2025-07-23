@@ -3,7 +3,7 @@ name = "org-calendar"
 version = "0.1.0"
 description = "Simple ORG mode calendar synch tool"
 authors = [
-    {name = "Aliaksandr Sharstniou"}
+    {name = "Aliaksandr Sharstniou",email = "a.sharstniou.dev@gmail.com"}
 ]
 license = {text = "MIT"}
 readme = "README.md"

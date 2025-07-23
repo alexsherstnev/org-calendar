@@ -1,3 +1,5 @@
+__version__ = "0.1.0"
+
 import argparse
 import datetime
 from pathlib import Path
@@ -10,6 +12,12 @@ import requests
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Convert iCal to org-mode for agenda.")
+    parser.add_argument(
+        "--version",
+        action="version",
+        version=f"%(prog)s v{__version__} © 2025 by Aliaksandr Sharstniou",
+        help="Show version and exit",
+    )
     parser.add_argument(
         "--url",
         required=True,
