@@ -57,7 +57,7 @@ cp dist/main ~/.local/bin/org_calendar
 
 ``` bash
 mkdir -p ~/.emacs.d/modules/
-wget https://raw.githubusercontent.com/alexsherstnev/org-calendar/main/org-calendar-sync.el -O ~/.emacs.d/modules/org-calendar-sync.el
+wget https://raw.githubusercontent.com/alexsherstnev/org-calendar/refs/heads/main/org-calendar-sync.el -O ~/.emacs.d/modules/org-calendar-sync.el
 ```
 
 ### Step 3: Configure Emacs
