@@ -24,9 +24,12 @@ A synchronization tool that converts iCalendar (.ics) files to Emacs org-mode fo
 Choose **either** option:
 
 #### Option A: Download Pre-built Binary
+
+Download binary from Release section
+
 ``` bash
-# Download latest release (example URL)
-wget https://github.com/alexsherstnev/org-calendar/releases/latest/download/org_calendar -O ~/.local/bin/org_calendar
+# Copy release to PATH
+cp ~/downloads/org_calendar -O ~/.local/bin/org_calendar
 chmod +x ~/.local/bin/org_calendar
 ```
 
@@ -55,9 +58,11 @@ cp dist/main ~/.local/bin/org_calendar
 
 ### Step 2: Install Emacs Module
 
+Download `org-calendar-sync.el` from repository
+
 ``` bash
 mkdir -p ~/.emacs.d/modules/
-wget https://raw.githubusercontent.com/alexsherstnev/org-calendar/refs/heads/main/org-calendar-sync.el -O ~/.emacs.d/modules/org-calendar-sync.el
+cp ~/downloads/org-calendar-sync.el ~/.emacs.d/modules/org-calendar-sync.el
 ```
 
 ### Step 3: Configure Emacs
