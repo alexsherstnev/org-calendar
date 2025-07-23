@@ -2,6 +2,8 @@
 
 A synchronization tool that converts iCalendar (.ics) files to Emacs org-mode format, with automatic updates and seamless integration with org-agenda.
 
+![Example of calendar -> org-agenda](images/example-calendar-sync-org-agenda.png)
+
 ## Features
 
 - **Automatic Synchronization**
