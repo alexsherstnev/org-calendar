@@ -19,6 +19,11 @@ def parse_args():
         help="Show version and exit",
     )
     parser.add_argument(
+        "--name",
+        required=True,
+        help="Name of the calendar",
+    )
+    parser.add_argument(
         "--url",
         required=True,
         help="URL of the .ics file",
@@ -63,7 +68,11 @@ def main():
     local_tz = datetime.datetime.now().astimezone().tzinfo
 
     # Prepare org-mode content
-    org_content = []
+    org_content = [
+        f"#+title: {args.name}",
+        f"#+filetags: {args.tags}",
+        "",
+    ]
     for event in events:
         start = event["DTSTART"].dt
         end = event["DTEND"].dt
@@ -82,7 +91,7 @@ def main():
             org_time = f"<{start.strftime('%Y-%m-%d')}>"  # All-day event
 
         # Build org entry
-        org_content.append(f"* {summary} {args.tags}")
+        org_content.append(f"* {summary}")
         org_content.append(f"SCHEDULED: {org_time}")
         org_content.append("")  # Empty line between events
 

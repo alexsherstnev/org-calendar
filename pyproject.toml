@@ -1,6 +1,6 @@
 [project]
 name = "org-calendar"
-version = "0.1.0"
+version = "0.2.0"
 description = "Simple ORG mode calendar synch tool"
 authors = [
     {name = "Aliaksandr Sharstniou",email = "a.sharstniou.dev@gmail.com"}

@@ -13,26 +13,30 @@
   "List of calendar configurations.
 Each configuration should be a plist with these properties:
 :url      - URL of the ICS calendar
+:name     - Name of the calendar
 :output   - Path to output org file
 :tags     - Org-mode tags for events (e.g. \":work:\")
 :weeks    - Number of weeks to fetch
 :update-interval - Sync interval in seconds (0 for manual only)"
   :type '(repeat (plist :options ((:url (string :tag "Calendar URL"))
-                                (:output (file :tag "Output file"))
-                                (:tags (string :tag "Org tags"))
-                                (:weeks (integer :tag "Weeks to fetch"))
-                                (:update-interval (integer :tag "Update interval (seconds)"))))
+                                  (:name (string :tag "Calendar name"))
+                                  (:output (file :tag "Output file"))
+                                  (:tags (string :tag "Org tags"))
+                                  (:weeks (integer :tag "Weeks to fetch"))
+                                  (:update-interval (integer :tag "Update interval (seconds)"))))
   :group 'org-calendar-sync))
 
 (defun update-calendar-from-ics (&rest args)
   "Synchronize calendar with given parameters without displaying buffer.
 ARGS should be a plist with keys:
 :url - Calendar URL
+:name - Calendar name
 :output - Output org file path
 :tags - Org tags string
 :weeks - Number of weeks to fetch"
   (interactive)
   (let ((url (plist-get args :url))
+        (name (plist-get args :name))
         (output (expand-file-name (plist-get args :output)))
         (tags (plist-get args :tags))
         (weeks (or (plist-get args :weeks) 2))
@@ -53,6 +57,7 @@ ARGS should be a plist with keys:
        :buffer buffer
        :command (list org-calendar-binary
                       "--url" url
+                      "--name" name
                       "--output" output
                       "--tags" tags
                       "--weeks" (number-to-string weeks)))
